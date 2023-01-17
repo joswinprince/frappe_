@@ -24,3 +24,8 @@ bench new-app app_name
 ```
 bench --site  site_name install-app app_name
 ``` 
+
+## Set Site to developer Mode
+```
+bench --site site_name set-config developer_mode 1
+```
