@@ -10,6 +10,11 @@ bench init frappe_bench_name
 bench start
 ```
 
+## Create a new site after running the bench
+```
+bench new-site site_name
+```
+
 ## Create an app in bench
 ```
 bench new-app app_name
