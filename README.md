@@ -19,3 +19,8 @@ bench new-site site_name
 ```
 bench new-app app_name
 ```
+
+## Install app in site
+```
+bench --site  site_name install-app app_name
+``` 
