@@ -1,0 +1,88 @@
+// Copyright (c) 2023, jos and contributors
+// For license information, please see license.txt
+
+frappe.ui.form.on("Parent Doc", {
+	// refresh(frm) {
+    //     frappe.msgprint("hello welcome to parent doc: refresh event")
+	// },
+    // onload:function(frm) {
+    //     frappe.msgprint("hello welcome to parent doc:onload event")
+	// },
+    // validate:function(frm) {
+    //     frappe.throw("hello welcome to parent doc:validate event")
+	// },
+    // before_save:function(frm) {
+    //     frappe.throw("hello welcome to parent doc:before save event")
+	// },
+    // after_save:function(frm) {
+    //     frappe.throw("hello welcome to parent doc:after save event")
+	// },
+    // allow:function(frm) {
+    //     frappe.throw("You changed clicked allow") //when we change values of a particular (doc)allow field
+	// },
+    // date:function(frm) {
+    //     frappe.throw("date was changed") //when we change values of a particular (doc)date field
+	// },
+    // email:function(frm) {
+    //     frappe.throw("email was changed") //when we change values of a particular (doc)email field
+	// },
+    // before_submit: function(frm) {
+    //     frappe.throw("Before submit")  // Only for submittable doctype
+    // },
+    // on_submit: function(frm) {
+    //     frappe.throw("on submit")  // during submit Only for submittable doctype
+    // }
+    // after_cancel: function(frm) {
+    //     frappe.throw("after cancel")  // during cancel Only for submittable doctype
+    // }
+    //  after_save:function(frm) {
+    //     frappe.msgprint(__("The age is {0}",[frm.doc.age]))// Fetch age from the document
+	// },
+    age:function(frm) {
+        
+        frappe.msgprint(__("The age is {0}",[frm.doc.age]))// Fetch age from the document
+	},
+    allow:function(frm) {
+        
+        frappe.msgprint(__("The allow is {0}",[frm.doc.age]))// Fetch age from the documentcd 
+	},
+    before_save:function(frm) {
+        
+        if (frm.doc.date==null) // Code to check if date is empty
+        {
+            //messagethrower.call("Date_","red","The Record should not be Empty");
+            frappe.throw({
+                title :("Fill date Information"),
+                indicator:"red",
+                message:__("Date field should not be Empty")
+            })
+        }
+       
+        },
+        // // To customize title in frappe 
+        // after_save:function(frm) {
+        //     frappe.msgprint({
+        //         title :("Notification"),
+        //         indicator:"red",
+        //         message:__("My Message")
+        //     })
+        // }
+        // To customize title in frappe 
+        after_save:function(frm) {
+            
+            frappe.throw({
+                title :("Notification"),
+                indicator:"green",
+                message:__("The Record {0} has been updated Successfully",[frm.doc.last_name])
+            })
+        }
+
+});
+// messagethrower:function(title_,indigator_,message_)
+// {
+//     frappe.throw({
+//         title :(title_),
+//         indicator:indigator_,
+//         message:__(message_)
+//     })  
+// }
