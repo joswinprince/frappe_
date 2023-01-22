@@ -1,0 +1,44 @@
+frappe.ui.form.on('User details', {
+	refresh(frm) {},
+		// your code here
+		 before_save:function(frm) {
+        
+        if ((frm.doc.first_name==null)||(frm.doc.first_name=="")) // Code to check if first name is empty
+        {
+            frappe.throw({
+                title :("Fill First Name Information"),
+                indicator:"red",
+                message:__("First Name should not be Empty")
+            })
+        }
+        
+        if ((frm.doc.last_name==null)||(frm.doc.last_name==""))  // Code to check if last name is empty
+        {
+            frappe.throw({
+                title :("Fill Last Name Information"),
+                indicator:"red",
+                message:__("Last Name should not be Empty")
+            })
+        }
+       	frm.doc.full_name = frm.doc.first_name +" "+frm.doc.middle_name + " " +frm.doc.last_name; // To make full name
+        
+         if ((frm.doc.phone==null)||(frm.doc.phone==""))  // Code to check if last name is empty
+        {
+            frappe.throw({
+                title :("Fill Phone Information"),
+                indicator:"red",
+                message:__("Phone should not be Empty")
+            })
+        }
+        
+         if ((frm.doc.email==null)||(frm.doc.email==""))  // Code to check if last name is empty
+        {
+            frappe.throw({
+                title :("Email Information"),
+                indicator:"red",
+                message:__("Email should not be Empty")
+            })
+        }
+        },
+	
+})
