@@ -1,0 +1,28 @@
+frappe.ui.form.on('Storage Box', {
+	refresh(form) {
+		form.set_value("created_by", frappe.session.user_fullname);
+		form.set_df_property('created_by', 'read_only', 1);
+		msgprint("Hey");
+		let storageBoxName = form.doc.storage_box_name;
+		msgprint("Hey 2"+ storageBoxName);
+		if (storageBoxName) {
+		    frappe.call({
+                method: "frappe.core.doctype.user.user.get_all_roles",
+                //method: "crs.api.get_samples_list",
+                //method: "get_samples_list",
+                args: {storageBoxName: storageBoxName}
+            }).done((r) => {
+                console.log(r);
+                form.doc.sample_list = [];
+                $.each(r.message, function(_i, e){
+                    let entry = form.add_child("sample_list");
+                    entry.sf_sample_id = e.sf_sample_id;
+                    entry.aliquot_ = e.aliquot_;
+                    entry.c2n_study_id = e.c2n_study_id;
+                    entry.sample_status = e.sample_status;
+                });
+                refresh_field("sample_list");
+            });
+		}
+	}
+});
