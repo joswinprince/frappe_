@@ -29,3 +29,21 @@ bench --site  site_name install-app app_name
 ```
 bench --site site_name set-config developer_mode 1
 ```
+
+events
+
+before save
+```
+ before_save:function(frm) {
+        
+        if ((frm.doc.sub_user==null)||(frm.doc.sub_user=="")) // Code to check if first name is empty
+        {
+            frappe.throw({
+                title :("sub user Information"),
+                indicator:"red",
+                message:__("Sub user should not be Empty")
+            })
+        }
+      
+ }
+```
