@@ -21,3 +21,20 @@ client script
  	
  	});
 ```
+
+
+server script
+```
+import frappe
+from frappe import _
+from frappe.model.document import Document
+
+class userinfoserver_scripting(Document):
+	#def validate(self):
+	#	frappe.msgprint("Hello Frappe")
+	#def before_save(self):
+	#	frappe.msgprint("before Frappe")
+	@frappe.whitelist()
+	def mymethod(self,msg):
+		return "Hi message from_call"
+    ```
