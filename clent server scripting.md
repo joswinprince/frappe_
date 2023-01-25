@@ -59,3 +59,18 @@ class userinfoserver_scripting(Document):
 		frappe.msgprint(msg)
 		return "Hi message from_call"
 		```
+server script call
+```
+frm.call({
+	doc: frm.doc,
+	method: 'frm_call',
+	args: { 
+		msg:"hiii"
+	},
+	freeze: true,
+	freeze_message:__('calling frm_server js file'),
+	callback: function(r) {
+	frappe.msgprint(r.message)
+	}
+	});
+```
