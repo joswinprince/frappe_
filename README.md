@@ -33,6 +33,10 @@ bench --site site_name set-config developer_mode 1
 ```
 bench --site site-name clear-cache
 ```
+## To migrate bench 
+```
+bench --site sitename migrate
+```
 events
 
 before save
