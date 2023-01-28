@@ -29,7 +29,10 @@ bench --site  site_name install-app app_name
 ```
 bench --site site_name set-config developer_mode 1
 ```
-
+## To clear cache in bench sites
+```
+bench --site site-name clear-cache
+```
 events
 
 before save
