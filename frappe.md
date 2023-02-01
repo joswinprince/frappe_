@@ -4,6 +4,7 @@ Creating buttons with option
 
 		      console.log('clear button initiated')
 		      console.log(frm.selected_doc)
+		      });
 		
 ```
 changing row3 and row5 value
