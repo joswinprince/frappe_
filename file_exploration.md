@@ -6,4 +6,9 @@ login.html => Modify login page
 => Route website users and all login related coding
 => ReDirect website users
 
+# Base_list.js
+=> To Move the filter to right
+
+# app.js
+=> To Set values to side bar 
 
