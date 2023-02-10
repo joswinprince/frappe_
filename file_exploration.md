@@ -15,3 +15,5 @@ login.html => Modify login page
 ## Permission.py
 => checks the role and user permissions
 
+##page.js
+ lims-bench/apps/frappe/frappe/core/doctype/page
