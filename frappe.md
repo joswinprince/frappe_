@@ -16,3 +16,40 @@ frm.set_value({
                 })
 		
 ```
+
+esign
+```frappe.ui.form.on('Purchase Order', {
+	refresh(frm) {
+		// your code here
+            			frm.add_custom_button(('ESignature'), ()=> {
+            
+            		      
+            		let d = new frappe.ui.Dialog({
+                title: 'Esign',
+                fields: [
+                    {
+                        label: 'User',
+                        fieldname: 'user',
+                        fieldtype: 'Data'
+                    },
+                    {
+                        label: 'Password',
+                        fieldname: 'pass',
+                        fieldtype: 'Password'
+                    }
+                    
+                ],
+                primary_action_label: 'Submit',
+                primary_action(values) {
+                    console.log(values);
+                    d.hide();
+                }
+            });
+                    d.show();
+      });
+		
+
+
+	}
+})
+```
