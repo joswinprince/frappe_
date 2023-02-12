@@ -10,3 +10,8 @@ frappe.get_meta(DocType)
 ```
 frappe.db.get_all('DocType',dict(module="Core"))
 ```
+- Get documents
+```
+frappe.get_doc('Purchase Order', '5af80f6f2d')
+```
+
