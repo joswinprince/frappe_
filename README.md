@@ -54,3 +54,8 @@ before save
       
  }
 ```
+## Open python bench console
+```
+bench --site myshop console
+```
+
