@@ -14,4 +14,7 @@ frappe.db.get_all('DocType',dict(module="Core"))
 ```
 frappe.get_doc('Purchase Order', '5af80f6f2d')
 ```
-
+-Rename document
+```
+frappe.rename_doc(DocType,old name,new name)
+```
