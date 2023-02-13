@@ -1,4 +1,4 @@
-Creating buttons with option
+Creating buttons 
 ```
 	frm.add_custom_button(('clear'), ()=> {
 
