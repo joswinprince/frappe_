@@ -33,6 +33,8 @@ bench --site site_name set-config developer_mode 1
 ```
 bench --site site-name clear-cache
 ```
+
+
 ## To migrate bench 
 ```
 bench --site sitename migrate
@@ -57,5 +59,10 @@ before save
 ## Open python bench console
 ```
 bench --site myshop console
+```
+### under python Console 
+## To check permission for a DocType
+```
+frappe.has_permission(DocType, "read", user='administrator')
 ```
 
