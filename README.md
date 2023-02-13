@@ -65,4 +65,8 @@ bench --site myshop console
 ```
 frappe.has_permission(DocType, "read", user='administrator')
 ```
+## To check the database type
+```
+frappe.db.db_type
+```
 
