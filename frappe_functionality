@@ -2,3 +2,15 @@
 ```
 frappe.is_table(DocType)
 ```
+
+## Dynamic buttons
+```
+button_name = ['Role','Role Profile','Activity Log'];
+        route_value = ['role','role profile','activity log'];
+        for (let i = 0; i < 2; i++) {
+                listview.page.add_inner_button(__(button_name[i]), function () {
+            frappe.set_route("List", route_value[i]);
+        },__("Views"));
+            }
+        //frappe.has_permission("abcd", "read", user='user@321.com')
+```
