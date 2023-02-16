@@ -24,3 +24,25 @@ onload: function(listview) {
 
 	}
 ```
+To create the frappe.session.user
+```
+<!--{% if frappe.session.user == 'Administrator' %}
+
+    				<button>Admin button</button>
+
+   				 {% else %}
+
+   				 <button>user button</button>
+
+   				 {% endif %} 
+
+   				 -->
+
+   				 <kbd>
+
+   				{%  print " Welcome, "+ frappe.session.user  %} 
+
+   								
+
+   				</kbd>
+```
