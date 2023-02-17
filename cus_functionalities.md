@@ -124,3 +124,20 @@ button_name = ['Role','Role Profile','Activity Log'];
 		}
 		</script>
 ```
+## Route from User List Doctype to a created page "user settings"
+under user_list.js
+```
+listview.page.add_inner_button(('Goto User page'), ()=> {
+
+					frappe.set_route("List", "user settings");
+
+		      
+
+		      });
+```
+under user_settings.js(Page )
+```
+page.add_inner_button(('Goto User List'), ()=> {
+					frappe.set_route("List", "user");
+		      });
+```
