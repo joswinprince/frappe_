@@ -91,13 +91,36 @@ button_name = ['Role','Role Profile','Activity Log'];
 
 		    primary_action_label: 'Submit',
 		    primary_action(values) {
+		    	calldialog1(); 
 			console.log(values);
 			d.hide();
 		    }
 		});
 		d.show();
-
 		}
-
+		
+		function calldialog1() {
+		let d1 = new frappe.ui.Dialog({
+		    title: 'Enter details 1',
+		    fields: [
+			{
+			    label: 'your Name',
+			    fieldname: 'first_name',
+			    fieldtype: 'Data'
+			},
+			{
+			    label: 'Phone',
+			    fieldname: 'Phone',
+			    fieldtype: 'Int'
+			}
+		    ],
+		    primary_action_label: 'Submit',
+		    primary_action(values) {
+			console.log(values);
+			d1.hide();
+		    }
+		});
+		d1.show();
+		}
 		</script>
 ```
