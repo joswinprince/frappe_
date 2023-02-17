@@ -57,3 +57,47 @@ button_name = ['Role','Role Profile','Activity Log'];
             }
         //frappe.has_permission("abcd", "read", user='user@321.com')
 ```
+## Dialog api button and action
+```
+<div id="main_button"> 
+
+   				{% if frappe.session.user == 'Administrator' %}
+    				<button onclick="calldialog()">Admin button</button>
+   				 {% else %}
+   				 <button>user button</button>
+   				 {% endif %} 
+   				</div>
+<script type="text/javascript">
+		function calldialog() {
+		let d = new frappe.ui.Dialog({
+		    title: 'Enter details',
+		    fields: [
+			{
+			    label: 'First Name',
+			    fieldname: 'first_name',
+			    fieldtype: 'Data'
+			},
+			{
+			    label: 'Last Name',
+			    fieldname: 'last_name',
+			    fieldtype: 'Data'
+			},
+			{
+			    label: 'Age',
+			    fieldname: 'age',
+			    fieldtype: 'Int'
+			}
+		    ],
+
+		    primary_action_label: 'Submit',
+		    primary_action(values) {
+			console.log(values);
+			d.hide();
+		    }
+		});
+		d.show();
+
+		}
+
+		</script>
+```
