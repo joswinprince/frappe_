@@ -69,4 +69,8 @@ frappe.has_permission(DocType, "read", user='administrator')
 ```
 frappe.db.db_type
 ```
+## Bench set Port
+```
+bench --site site_name serve --port port_number
+```
 
