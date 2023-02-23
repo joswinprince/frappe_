@@ -73,4 +73,7 @@ frappe.db.db_type
 ```
 bench --site site_name serve --port port_number
 ```
-
+## To get custom bench 
+```
+bench init /home/jprince/abctest --frappe-branch main --frappe-path https://github.com/joswinprince/frappe
+```
