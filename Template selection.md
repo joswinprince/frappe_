@@ -33,3 +33,4 @@ frappe.ui.form.on('Template', {
 	}
 })
 ```
+Seperate Doctype should contain list of Templates
