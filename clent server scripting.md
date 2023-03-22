@@ -40,8 +40,6 @@ class userinfoserver_scripting(Document):
 		return "Hi message from_call"
  server script time
  ```
- # Copyright (c) 2023, jos and contributors
-# For license information, please see license.txt
 
 import frappe
 from frappe import _
@@ -144,4 +142,40 @@ class userinfoserver_scripting(Document):
 		return "new document called"
 		
 	
+```
+Java script calling
+```
+$('#submit_file_transfer_engine') 
+.off() // unbind everything to start so that you're only attaching a single handler
+.on('click', () => { // bind a function to the click event
+    frappe.call({
+        method: "folder_name.folder_name.doctype.doctype_name.api.method_name",
+        type: "GET",
+        args: {
+        	
+        },
+        async: true,
+        callback: function (r) {
+            frappe.msgprint('...');
+        	/* if (r.exc) {
+        		frappe.msgprint(__("Unable to load: {0}", [__(doctype)]));
+        		throw "No doctype";
+        	}
+        	if (r.message == "use_cache") {
+        		frappe.model.sync(cached_doc);
+        	} else {
+        		frappe.model.set_in_localstorage(doctype, r.docs);
+        	}
+        	frappe.model.init_doctype(doctype);
+        
+        	if (r.user_settings) {
+        		// remember filters and other settings from last view
+        		frappe.model.user_settings[doctype] = JSON.parse(r.user_settings);
+        		frappe.model.user_settings[doctype].updated_on = moment().toString();
+        	}
+        	callback && callback(r); */
+        }
+    }); // the action you want the button to execute
+});
+
 ```
